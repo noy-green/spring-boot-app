@@ -1,0 +1,23 @@
+<form [formGroup]="myForm" (ngSubmit)="handleSubmit()">
+    <mat-form-field class="example-form-field">
+        <input matInput type="text" placeholder="Name" formControlName="name">
+    </mat-form-field>
+    <br>
+    <span *ngIf="myForm.controls.name.dirty && myForm.controls.name.invalid">name cannot be empty</span>
+    <br>
+    <mat-form-field class="example-form-field">
+        <input matInput type="number" placeholder="Amount" formControlName="amount">
+    </mat-form-field>
+    <br>
+    <span *ngIf="myForm.controls.amount.dirty && myForm.controls.amount.invalid">Amount cannot be empty</span>
+    <br>
+    <mat-form-field class="example-form-field">
+        <input matInput type="text" placeholder="Inventory code" formControlName="inventoryCode">
+    </mat-form-field>
+    <br>
+    <span *ngIf="myForm.controls.inventoryCode.dirty && myForm.controls.inventoryCode.invalid">Inventory code cannot be empty</span>
+    <br>
+    <button mat-button type="submit" [disabled]="myForm.invalid">Add</button>
+</form>
+
+
